@@ -10,4 +10,7 @@ public class MainWindowViewModel : ViewModelBase
     
     public ValidationUsingINotifyDataErrorInfoViewModel ValidationUsingINotifyDataErrorInfoViewModel { get; }
         = new();
+    
+    public ValidationUsingExceptionInsideSetterViewModel ValidationUsingExceptionInsideSetterViewModel { get; }
+        = new();
 }
