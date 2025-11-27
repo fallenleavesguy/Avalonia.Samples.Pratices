@@ -22,6 +22,11 @@
 
     <TabControl TabStripPlacement="Bottom">
         <!--  Validation using DataAnnotations  -->
+        <TabItem Header="INotifyDataErrorInfo">
+            <StackPanel>
+                <TextBox Text="{Binding ValidationUsingINotifyDataErrorInfoViewModel.EMail}" />
+            </StackPanel>
+        </TabItem>
         <TabItem Header="DataAnnotations">
             <StackPanel>
                 <TextBox Text="fjfj" />
