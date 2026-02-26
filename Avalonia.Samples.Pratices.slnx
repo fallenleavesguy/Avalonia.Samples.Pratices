@@ -1,3 +1,6 @@
 <Solution>
+  <Folder Name="/CustomControls/">
+    <Project Path="RatingControlSample/RatingControlSample.csproj" />
+  </Folder>
   <Project Path="Avalonia.Samples.Pratices/Avalonia.Samples.Pratices.csproj" />
 </Solution>
