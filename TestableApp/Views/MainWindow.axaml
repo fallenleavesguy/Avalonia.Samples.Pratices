@@ -1,0 +1,64 @@
+<Window
+    CanResize="False"
+    Icon="/Assets/avalonia-logo.ico"
+    SizeToContent="WidthAndHeight"
+    Title="Simple Calculator"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="TestableApp.Views.MainWindow"
+    x:DataType="vm:MainWindowViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:TestableApp.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel
+        HorizontalAlignment="Left"
+        Margin="10"
+        Spacing="10">
+        <TextBox
+            Name="FirstOperandInput"
+            Text="{Binding FirstOperand, Mode=TwoWay}"
+            Watermark="Operand 1" />
+        <TextBox
+            Name="SecondOperandInput"
+            Text="{Binding SecondOperand, Mode=TwoWay}"
+            Watermark="Operand 2" />
+
+        <UniformGrid Columns="4">
+            <UniformGrid.Styles>
+                <Style Selector="UniformGrid &gt; Button">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="10" />
+                    <Setter Property="MinWidth" Value="50" />
+                </Style>
+            </UniformGrid.Styles>
+            <Button
+                Classes="accent"
+                Command="{Binding AddCommand}"
+                Content="+"
+                Name="AddButton" />
+            <Button
+                Classes="accent"
+                Command="{Binding SubtractCommand}"
+                Content="-"
+                Name="SubtractButton" />
+            <Button
+                Classes="accent"
+                Command="{Binding MultiplyCommand}"
+                Content="*"
+                Name="MultiplyButton" />
+            <Button
+                Classes="accent"
+                Command="{Binding DivideCommand}"
+                Content="/"
+                Name="DivideButton" />
+        </UniformGrid>
+
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <TextBlock Text="Result:" />
+            <TextBlock Text="{Binding Result}" x:Name="ResultBox" />
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -2,5 +2,9 @@
   <Folder Name="/CustomControls/">
     <Project Path="RatingControlSample/RatingControlSample.csproj" />
   </Folder>
+  <Folder Name="/Testing/">
+    <Project Path="TestableApp.Headless.XUnit/TestableApp.Headless.XUnit.csproj" />
+    <Project Path="TestableApp/TestableApp.csproj" />
+  </Folder>
   <Project Path="Avalonia.Samples.Pratices/Avalonia.Samples.Pratices.csproj" />
 </Solution>
