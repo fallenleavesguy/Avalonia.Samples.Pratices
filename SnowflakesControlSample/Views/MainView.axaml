@@ -1,0 +1,61 @@
+﻿<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="SnowflakesControlSample.Views.MainView"
+    x:DataType="viewModels:SnowflakeGameViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:controls="clr-namespace:SnowflakesControlSample.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:SnowflakesControlSample.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.DataContext>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <viewModels:SnowflakeGameViewModel />
+    </Design.DataContext>
+
+    <Panel>
+        <!--  Just some Background for a nicer UI  -->
+        <Panel.Background>
+            <LinearGradientBrush EndPoint="0%,100%" StartPoint="0,0">
+                <GradientStop Color="DarkBlue" Offset="0" />
+                <GradientStop Color="LightSkyBlue" Offset=".85" />
+                <GradientStop Color="LimeGreen" Offset=".85" />
+                <GradientStop Color="DarkGreen" Offset="1" />
+            </LinearGradientBrush>
+        </Panel.Background>
+
+        <!--  This is our SnowFlakesControl. It can be used like any other Control.  -->
+        <controls:SnowflakesControl
+            HorizontalAlignment="Stretch"
+            IsRunning="{Binding IsGameRunning}"
+            Score="{Binding Score}"
+            Snowflakes="{Binding Snowflakes}"
+            VerticalAlignment="Stretch" />
+
+        <!--  This ProgressBar is rendered above our SnowFlakesControl  -->
+        <ProgressBar
+            Foreground="Goldenrod"
+            Height="3"
+            Margin="5"
+            Maximum="{Binding GameDurationMilliseconds}"
+            Value="{Binding MillisecondsRemaining}"
+            VerticalAlignment="Top" />
+
+        <!--  This Button is only visible when the game is not running. It has a Button to start the game  -->
+        <Button
+            Command="{Binding StartGameCommand}"
+            Content="►"
+            CornerRadius="25"
+            FontSize="50"
+            HorizontalAlignment="Center"
+            IsVisible="{Binding !IsGameRunning}"
+            VerticalAlignment="Center" />
+
+    </Panel>
+</UserControl>

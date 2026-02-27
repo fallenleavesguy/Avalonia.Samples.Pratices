@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/CustomControls/">
     <Project Path="RatingControlSample/RatingControlSample.csproj" />
+    <Project Path="SnowflakesControlSample/SnowflakesControlSample.csproj" />
   </Folder>
   <Folder Name="/Testing/">
     <Project Path="TestableApp.Headless.XUnit/TestableApp.Headless.XUnit.csproj" />
